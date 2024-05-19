@@ -18,7 +18,22 @@
         height: 1.8em;
         font-size: .9em;
         font-weight: 700;
-        @include underline-transistion(1.1);
+        &::after {
+          content:'';
+          display: block;
+          bottom: 0;
+          left: 0;
+          left: 0;
+          height: .2em;
+          background-color: $accent-color;
+          transform: scaleX(0);
+          @include transistion(transform, .2s);
+        }
+        &:hover{
+          &::after{
+            transform: scaleX(1.1);
+          }
+        }
       }
     }
   }
